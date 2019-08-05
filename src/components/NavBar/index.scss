@@ -1,0 +1,106 @@
+page {
+  --height: 88px;
+  --right: 190rpx;
+}
+
+.navigation-bar {
+  overflow: hidden;
+  .android {
+    --height: 96px;
+    --right: 222rpx;
+  }
+  .navigation-bar__placeholder {
+    display: none;
+  }
+
+  .navigation-bar__right {
+    font-size: 17Px;
+    width: var(--right);
+    padding-right: 32px;
+  }
+
+  .navigation-bar__inner {
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    width:100%;
+  
+    .navigation-bar__left {
+      position: relative;
+      width: var(--right);
+      padding-left: 32px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      -webkit-box-pack: center;
+  
+      .navigation-bar__btn {
+        display: inline-block;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+      }
+      .navigation-bar__btn_goback {
+        font-size: 24px;
+        width: 1em;
+        height: 2em;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='24' viewBox='0 0 12 24'%3E  %3Cpath fill-opacity='.9' fill-rule='evenodd' d='M10 19.438L8.955 20.5l-7.666-7.79a1.02 1.02 0 0 1 0-1.42L8.955 3.5 10 4.563 2.682 12 10 19.438z'/%3E%3C/svg%3E");
+        background-position: 50% 50%;
+        background-size: cover;
+        &:active {
+          opacity: 0.5;
+        }
+      }
+    }
+  
+    .navigation-bar__center {
+      font-size: 17Px;
+      font-weight: 550;
+      text-align: center;
+      position: relative;
+      flex: 1;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+    }
+    .navigation-bar__loading {
+      font-size: 0;
+      .loading {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.is_native {
+    .navigation-bar__inner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 5001;
+      padding-right: var(--right);
+      width: calc(100% - "var(--right)");
+    }
+    .navigation-bar__placeholder {
+      display: block;
+      visibility: hidden;
+      height: var(--height);
+      background: #f8f8f8;
+      position: relative;
+      z-index: 50;
+    }
+
+    .navigation-bar__right {
+      width: initial;
+    }
+
+
+  }
+
+
+}
+
+
