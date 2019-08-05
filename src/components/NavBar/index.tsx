@@ -7,7 +7,7 @@ interface NavBarProps {
   title: string
   background: string
   color: string
-  back: boolean
+  back: 'auto'| true | false
   loading: boolean
   animated: boolean
   show: boolean
@@ -39,7 +39,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
     title: '',
     background: 'white',
     color: '',
-    back: true,
+    back: 'auto',
     loading: false,
     animated: true,
     show: true,
@@ -80,12 +80,16 @@ export default class Card extends Component<NavBarProps, NavBarState> {
   }
 
   render() {
-    const { extClass, title, background, color, back, loading, renderLeft,renderRight ,isNative } = this.props
+    let { extClass, title, background, color, back, loading, renderLeft,renderRight ,isNative } = this.props
 
     const { displayStyle } = this.state
 
     const paddingTop = isNative?`padding-top: ${statusBarHeight}px;`:'';
 
+    if(back === 'auto') {
+      const length =Taro.getCurrentPages().length
+      back = length !== 1
+    }
 
     return (
       <View className={`navigation-bar ${extClass} ${isNative?'is_native':''}`}>

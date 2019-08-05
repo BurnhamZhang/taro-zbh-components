@@ -1,11 +1,10 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button } from '@tarojs/components'
-import './index.scss'
+import Taro, { Component, Config } from "@tarojs/taro";
+import { View, Button } from "@tarojs/components";
+import "./index.scss";
 
-import NavBar from '../../components/NavBar'
+import NavBar from "../../components/NavBar";
 
 export default class Index extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -14,22 +13,21 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '商户列表'
-  }
+    navigationStyle: "custom"
+  };
 
-  onClick (){
+  onClick() {
     Taro.navigateTo({
-      url:'/pages/index2/index'
-    })
+      url: "/pages/index2/index"
+    });
   }
 
-  render () {
-
+  render() {
     return (
-      <View className='index'>
-       <Button onClick={this.onClick.bind(this)}>quuquq</Button>
+      <View className="index">
+        <NavBar title="首页" />
+        <Button onClick={this.onClick.bind(this)}>次页</Button>
       </View>
-    )
+    );
   }
 }
-

@@ -1,11 +1,10 @@
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
-import './index.scss'
+import Taro, { Component, Config } from "@tarojs/taro";
+import { View } from "@tarojs/components";
+import "./index.scss";
 
-import NavBar from '../../components/NavBar'
+import NavBar from "../../components/NavBar";
 
 export default class Index extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -14,26 +13,15 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: '商户列表',
-    navigationStyle:'custom'
-  }
+    navigationStyle: "custom"
+  };
 
-
-  render () {
-
+  render() {
     return (
-      <View className='index'>
-        <NavBar
-          title="商户列表"
-        />
-        <NavBar
-          title="商户列表"
-          isNative={false}
-        />
-
-       
+      <View className="index">
+        <NavBar title="商户列表" />
+        <NavBar title="商户列表" isNative={false} />
       </View>
-    )
+    );
   }
 }
-
