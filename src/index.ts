@@ -1,3 +1,5 @@
-import NavBar from './components/NavBar'
+import NavBar from "./components/NavBar";
+import NumberInput from "./components/NumberInput";
 
-export  {NavBar as NavBar} 
+export { NavBar };
+export { NumberInput };

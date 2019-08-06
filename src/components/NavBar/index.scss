@@ -23,8 +23,8 @@ page {
     height: var(--height);
     display: flex;
     align-items: center;
-    width:100%;
-  
+    width: 100%;
+
     .navigation-bar__left {
       position: relative;
       width: var(--right);
@@ -34,7 +34,7 @@ page {
       display: flex;
       align-items: center;
       -webkit-box-pack: center;
-  
+
       .navigation-bar__btn {
         display: inline-block;
         vertical-align: middle;
@@ -52,7 +52,7 @@ page {
         }
       }
     }
-  
+
     .navigation-bar__center {
       font-size: 17Px;
       font-weight: 550;
@@ -96,11 +96,6 @@ page {
     .navigation-bar__right {
       width: initial;
     }
-
-
   }
-
-
 }
-
 

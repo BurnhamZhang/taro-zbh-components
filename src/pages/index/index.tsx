@@ -1,8 +1,9 @@
 import Taro, { Component, Config } from "@tarojs/taro";
-import { View, Button } from "@tarojs/components";
+import { View, Button, Input } from "@tarojs/components";
 import "./index.scss";
 
 import NavBar from "../../components/NavBar";
+import NumberInput from "../../components/NumberInput";
 
 export default class Index extends Component {
   /**
@@ -16,17 +17,28 @@ export default class Index extends Component {
     navigationStyle: "custom"
   };
 
+  state = {
+    value: "123"
+  };
+
   onClick() {
     Taro.navigateTo({
       url: "/pages/index2/index"
     });
   }
+  onChange(v){
+    console.warn('onChange',v)
+  }
+
+ 
 
   render() {
     return (
       <View className="index">
         <NavBar title="首页" />
         <Button onClick={this.onClick.bind(this)}>次页</Button>
+        <NumberInput onChange={this.onChange.bind(this)}/>
+        <Input></Input>
       </View>
     );
   }
