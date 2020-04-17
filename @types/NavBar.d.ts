@@ -5,7 +5,7 @@ export interface NavBarProps {
   title?: string;
   background?: string;
   color?: string;
-  back?: 'auto'| true |false ; // 
+  back?: 'auto'| true |false ; //
   loading?: boolean;
   animated?: boolean;
   show?: boolean;
@@ -14,6 +14,7 @@ export interface NavBarProps {
   isNative?: boolean;
   renderRight?: () => any;
   renderLeft?: () => any;
+  renderTitle?: () => any;
 }
 
 declare const NavBar: ComponentClass<NavBarProps>;
