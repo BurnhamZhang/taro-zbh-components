@@ -16,6 +16,7 @@ interface NavBarProps {
   isNative: boolean;
   renderRight: () => any;
   renderLeft: () => any;
+  renderTitle: () => any;
 }
 
 interface NavBarState {
@@ -50,11 +51,12 @@ export default class Card extends Component<NavBarProps, NavBarState> {
     displayStyle: "",
     isNative: true,
     renderRight: () => undefined,
-    renderLeft: () => undefined
+    renderLeft: () => undefined,
+    renderTitle: () => undefined,
   };
 
   state: NavBarState = {
-    displayStyle: ""
+    displayStyle: "",
   };
 
   componentWillReceiveProps(nextProps) {
@@ -66,7 +68,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
   onClickBack() {
     const { delta } = this.props;
     Taro.navigateBack({
-      delta
+      delta,
     });
   }
   _showChange(show) {
@@ -80,7 +82,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
       displayStyle = `display: ${show ? "" : "none"}`;
     }
     this.setState({
-      displayStyle
+      displayStyle,
     });
   }
 
@@ -94,7 +96,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
       loading,
       renderLeft,
       renderRight,
-      isNative
+      isNative,
     } = this.props;
 
     const { displayStyle } = this.state;
@@ -145,6 +147,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
               </View>
             )}
             {title ? <Text>{title}</Text> : null}
+            {this.props.renderTitle()}
           </View>
 
           <View className="navigation-bar__right">{renderRight()}</View>

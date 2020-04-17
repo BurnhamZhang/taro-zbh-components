@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import "./index.scss";
+import { AtSegmentedControl } from "taro-ui";
 
 import NavBar from "../../components/NavBar";
 
@@ -13,14 +14,19 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationStyle: "custom"
+    navigationStyle: "custom",
   };
 
   render() {
     return (
       <View className="index">
-        <NavBar title="商户列表" />
-        <NavBar title="商户列表" isNative={false} />
+        <NavBar
+          renderTitle={() => (
+            <AtSegmentedControl  values={["储值卡", "优惠券"]} />
+          )}
+          renderLeft={() => <View>test</View>}
+          renderRight={() => <View>test</View>}
+        />
       </View>
     );
   }
