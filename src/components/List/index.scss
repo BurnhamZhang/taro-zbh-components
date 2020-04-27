@@ -1,0 +1,16 @@
+@import "~taro-ui/dist/style/variables/default.scss";
+@import "~taro-ui/dist/style/mixins/index.scss";
+
+.my-list {
+  background-color: $color-bg;
+  @include hairline-top-bottom();
+
+  /* modifiers */
+  &--no-border {
+    &::after,
+    &::before {
+      content: initial;
+      border: none;
+    }
+  }
+}

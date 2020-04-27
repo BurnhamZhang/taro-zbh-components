@@ -17,6 +17,7 @@ interface NavBarProps {
   renderRight: () => any;
   renderLeft: () => any;
   renderTitle: () => any;
+  leftCircle: boolean;
 }
 
 interface NavBarState {
@@ -53,6 +54,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
     renderRight: () => undefined,
     renderLeft: () => undefined,
     renderTitle: () => undefined,
+    leftCircle: false,
   };
 
   state: NavBarState = {
@@ -97,6 +99,7 @@ export default class Card extends Component<NavBarProps, NavBarState> {
       renderLeft,
       renderRight,
       isNative,
+      leftCircle,
     } = this.props;
 
     const { displayStyle } = this.state;
@@ -123,8 +126,8 @@ export default class Card extends Component<NavBarProps, NavBarState> {
           }`}
         >
           <View
-            className="navigation-bar__left"
-            style={isNative ? leftWidth : ""}
+            className={`navigation-bar__left  ${leftCircle ? "circle" : ""}`}
+            style={isNative && !leftCircle ? leftWidth : ""}
           >
             {back === true && (
               <View className="navigation-bar__buttons">
@@ -134,7 +137,9 @@ export default class Card extends Component<NavBarProps, NavBarState> {
                 />
               </View>
             )}
+            <View className='navigation-bar__btn_left'>
             {renderLeft()}
+            </View>
           </View>
 
           <View className="navigation-bar__center">

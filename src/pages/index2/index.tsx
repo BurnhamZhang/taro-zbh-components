@@ -1,7 +1,7 @@
 import Taro, { Component, Config } from "@tarojs/taro";
 import { View } from "@tarojs/components";
 import "./index.scss";
-import { AtSegmentedControl } from "taro-ui";
+import { AtIcon, AtButton } from "taro-ui";
 
 import NavBar from "../../components/NavBar";
 
@@ -17,16 +17,25 @@ export default class Index extends Component {
     navigationStyle: "custom",
   };
 
+  state = {
+    leftCircle: true,
+  };
+
   render() {
+    const { leftCircle } = this.state;
     return (
       <View className="index">
         <NavBar
-          renderTitle={() => (
-            <AtSegmentedControl  values={["储值卡", "优惠券"]} />
-          )}
-          renderLeft={() => <View>test</View>}
-          renderRight={() => <View>test</View>}
+          title={"测试"}
+          renderLeft={() => <AtIcon value="filter" size="20" />}
+          leftCircle={leftCircle}
         />
+        <AtButton
+          type="primary"
+          onClick={() => this.setState({ leftCircle: !leftCircle })}
+        >
+          leftCircle
+        </AtButton>
       </View>
     );
   }

@@ -1,0 +1,73 @@
+.coupon {
+  padding: 20px;
+  width: 700px;
+  height: 200px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .coupon-header {
+    width: 160px;
+    height: 160px;
+    padding: 30px 0;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 26px;
+    color: #ef0526;
+    .coupon-price {
+      font-size: 40px;
+    }
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 160px;
+    .title {
+      font-size: 26px;
+    }
+  }
+
+  .brand {
+    font-size: 22px;
+    color: #878787;
+  }
+  .brand-logo {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    vertical-align: text-bottom;
+    margin-right: 20px;
+  }
+
+  .right {
+    align-self: center;
+  }
+  .count {
+    font-size: 48px;
+  }
+
+  .expire-time {
+    font-size: 22px;
+    color: #878787;
+  }
+
+  .share {
+    font-size: 20px;
+    color: #ef0526;
+  }
+}

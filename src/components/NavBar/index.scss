@@ -28,17 +28,20 @@ page {
     .navigation-bar__left {
       position: relative;
       width: var(--right);
-      padding-left: 32px;
+      margin-left: 16px;
       display: -webkit-box;
       display: -webkit-flex;
       display: flex;
       align-items: center;
       -webkit-box-pack: center;
+      border-radius: 32rpx;
 
-      .navigation-bar__btn {
+      .navigation-bar__buttons {
         display: inline-block;
         vertical-align: middle;
         background-repeat: no-repeat;
+        width: 88rpx;
+        text-align: center;
       }
       .navigation-bar__btn_goback {
         font-size: 24px;
@@ -47,8 +50,22 @@ page {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='24' viewBox='0 0 12 24'%3E  %3Cpath fill-opacity='.9' fill-rule='evenodd' d='M10 19.438L8.955 20.5l-7.666-7.79a1.02 1.02 0 0 1 0-1.42L8.955 3.5 10 4.563 2.682 12 10 19.438z'/%3E%3C/svg%3E");
         background-position: 50% 50%;
         background-size: cover;
+        margin: 0 auto;
         &:active {
           opacity: 0.5;
+        }
+      }
+      &.circle {
+        border: 1rpx solid #ebebeb;
+        border-radius: 32rpx;
+        height: 64rpx;
+        width: 176rpx;
+        .navigation-bar__buttons {
+          border-right: 1rpx solid #ebebeb;
+        }
+        .navigation-bar__btn_left {
+          width: 88rpx;
+          text-align: center;
         }
       }
     }
@@ -98,4 +115,3 @@ page {
     }
   }
 }
-

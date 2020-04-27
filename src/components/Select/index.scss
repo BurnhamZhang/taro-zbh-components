@@ -1,0 +1,24 @@
+.select {
+  font-size: 34px;
+  line-height: 80px;
+  color: #cacaca;
+  padding: 10px 30px;
+  background: white;
+  margin-bottom: 10px;
+}
+
+.select-item {
+  display: inline-block;
+  color: black;
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 20px;
+    border-style: solid;
+    border-color: #d9d9d9 transparent transparent transparent;
+    display: inline-block;
+    margin-bottom: -16px;
+    margin-left: 5px;
+  }
+}
